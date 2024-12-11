@@ -33,6 +33,7 @@ jobs:
           TF_VAR_github_token: ${{ secrets.PAT }}
           TF_VAR_github_owner: "softservedata"
           TF_VAR_deploy_key: ${{ secrets.DEPLOY_KEY }}
+          TF_VAR_discord_webhook: ${{ secrets.DISCORD_WEBHOOK }}
         run: terraform apply -auto-approve
 
       - name: Configure Repository Secrets
