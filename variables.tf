@@ -7,3 +7,8 @@ variable "github_owner" {
   description = "The GitHub organization or username that owns the repository"
   type        = string
 }
+
+variable "discord_webhook" {
+  description = "Discord webhook URL for notifications"
+  type        = string
+}
