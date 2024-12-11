@@ -1,14 +1,19 @@
 variable "github_token" {
-  description = "The GitHub personal access token for authentication"
+  description = "GitHub token for authentication"
   type        = string
 }
 
 variable "github_owner" {
-  description = "The GitHub organization or username that owns the repository"
+  description = "GitHub username or organization"
   type        = string
 }
 
 variable "discord_webhook" {
-  description = "Discord webhook URL for notifications"
+  description = "Discord webhook URL"
+  type        = string
+}
+
+variable "deploy_key" {
+  description = "Deploy key for the repository"
   type        = string
 }
