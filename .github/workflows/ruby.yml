@@ -49,6 +49,17 @@ jobs:
           terraform plan -no-color -out tfplan
           PLAN=$(terraform show -json tfplan)
           bash -e .github/tests/test/tests.sh "$PLAN" .github/tests/test/test_cases.txt
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+      
+      - name: Wait for Resources
+        run: sleep 30
+
+      - name: Check Resource Readiness
+        run: |
+          curl -I https://example.com || exit 1
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
