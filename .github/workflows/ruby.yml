@@ -43,6 +43,8 @@ jobs:
           terraform_wrapper: false
       - name: Terraform Init
         run: terraform init
+      - name: Apply Terraform Config
+        run: terraform apply -auto-approve
       - name: Test Terraform Config
         run: |
           terraform validate
