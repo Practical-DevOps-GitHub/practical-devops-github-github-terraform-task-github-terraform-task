@@ -43,14 +43,14 @@ jobs:
           terraform_wrapper: false
       - name: Terraform Init
         run: terraform init
-      - name: Apply Terraform Config
-        run: terraform apply -auto-approve
       - name: Test Terraform Config
         run: |
           terraform validate
           terraform plan -no-color -out tfplan
           PLAN=$(terraform show -json tfplan)
           bash -e .github/tests/test/tests.sh "$PLAN" .github/tests/test/test_cases.txt
+      - name: Apply Terraform Config
+        run: terraform apply -auto-approve
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
