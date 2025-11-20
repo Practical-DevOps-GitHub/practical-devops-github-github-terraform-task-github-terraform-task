@@ -43,6 +43,13 @@ jobs:
       - name: Terraform Init
         run: terraform init
       - name: Test Terraform Config
+        env:
+          TF_VAR_github_token: ${{ secrets.PAT }}
+          TF_VAR_github_owner: Practical-DevOps-GitHub
+          TF_VAR_repository_name: github-terraform-task-Sp1ker2
+          TF_VAR_deploy_key_public: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFvrsZxKSgvkIZOOpyGY59VPhz1c33Je/Sci+fMY+MnM deploy_key"
+          TF_VAR_discord_webhook_url: "https://discord.com/api/webhooks/1234567890123456789/temporary-webhook"
+          TF_VAR_pat_token: ${{ secrets.PAT }}
         run: |
           terraform validate
           terraform plan -no-color -out tfplan

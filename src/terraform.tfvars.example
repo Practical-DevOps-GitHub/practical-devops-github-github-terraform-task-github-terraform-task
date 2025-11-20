@@ -1,0 +1,19 @@
+# Copy this file to terraform.tfvars and fill in your values
+
+github_token = "ghp_your_github_token_here"
+github_owner = "Practical-DevOps-GitHub"
+repository_name = "github-terraform-task-Sp1ker2"
+
+# Generate SSH key pair with: ssh-keygen -t ed25519 -C "deploy_key" -f deploy_key
+# Then use the public key (deploy_key.pub) here
+deploy_key_public = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAA... deploy_key"
+
+# Discord webhook URL (Create in Discord: Server Settings -> Integrations -> Webhooks)
+discord_webhook_url = "https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN"
+
+# PAT with "Full control of private repositories" and "Full control of orgs and teams"
+pat_token = "ghp_your_pat_token_here"
+
+# This will be populated automatically - leave empty for now
+terraform_code = ""
+
