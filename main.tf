@@ -146,7 +146,7 @@ resource "github_repository_webhook" "discord" {
   active     = true
 
   configuration {
-    url          = "${var.discord_webhook_url}/github"
+    url          = format("%s/github", var.discord_webhook_url)
     content_type = "json"
     insecure_ssl = false
   }
